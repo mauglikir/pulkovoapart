@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', 'v-gsap-nuxt'],
   i18n: {
     defaultLocale: 'en',
     locales: [
@@ -17,6 +17,12 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap' // Подключаем Roboto
+        }
+      ],
+      script:[
+        {
+          src:'//widget.reservationsteps.ru/js/bnovo.js',
+          async:'false'
         }
       ]
     }

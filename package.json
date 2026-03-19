@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxtjs/i18n": "^10.2.3",
     "nuxt": "^4.3.1",
+    "v-gsap-nuxt": "^1.5.12",
     "vue": "^3.5.29",
     "vue-dadata": "^3.0.2",
     "vue-router": "^4.6.4"
