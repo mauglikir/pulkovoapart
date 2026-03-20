@@ -58,7 +58,7 @@ onMounted(() =>{
     <section id="banner">
         <h1 style="opacity:0" class="main_title" >{{ $t('maintitle') }}</h1>
         <p style="opacity:0" class="title">{{ $t('title') }}</p>
-        <a style="opacity:0" class="btn__booking" href="https://pulkovo-apart.com/booking.html"> <img src="/img/icon/calendar.svg" alt="" srcset="">Забронировать</a>
+        <a style="opacity:0" class="btn__booking" href="https://pulkovo-apart.com/booking.html"> <img src="/img/icon/calendar.svg" alt="" srcset="">{{$t('booking')}}</a>
     </section>
     
 
