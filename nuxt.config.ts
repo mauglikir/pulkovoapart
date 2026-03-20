@@ -3,11 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', 'v-gsap-nuxt'],
-  // vite:{
-  //   server: {
-  //       allowedHosts: ['kfspb.ru','www.kfspb.ru']
-  //   }
-  // },
+  vite:{
+     server: {
+         allowedHosts: ['kfspb.ru','www.kfspb.ru']
+     }
+   },
   i18n: {
     defaultLocale: 'en',
     locales: [
