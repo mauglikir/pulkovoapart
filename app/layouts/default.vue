@@ -35,16 +35,18 @@ export default {
         <div class="wrapper__menu" v-if="!open">
             <div class="wrapper__menu__list">
                <ul>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
+                <li><NuxtLink click="open=!open" to="/">{{$t('home')}}</NuxtLink></li>
+                <li><NuxtLink click="open=!open" to="/about">{{$t('apartment')}}</NuxtLink></li>
+                <li><NuxtLink click="open=!open" to="/about">{{$t('bookingconditions')}}</NuxtLink></li>
+                <li><NuxtLink click="open=!open" to="/about">{{$t('contact')}}</NuxtLink></li>
                </ul>
-                 <button v-for="locale in locales" :key="locale" @click="setLocale(locale.code)">
-                    <img :src="`/img/flag/${locale.icon}` " alt="">
-                    {{ locale.code }}
-                </button>
+               <div class="btn__group">
+                    <button v-for="locale in locales" :key="locale" @click="setLocale(locale.code)">
+                        <img :src="`/img/flag/${locale.icon}` " alt="">
+                        {{ locale.code }}
+                    </button>
+               </div>
+                 
             </div>
         </div>
         </GSAPTransition>
@@ -123,5 +125,20 @@ nav img{
     width: 100%;
     z-index: 888;
     border-bottom-left-radius: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper__menu__list ul{
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    align-items: center;
+}
+.wrapper__menu a{
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 1.2rem;
 }
 </style>
