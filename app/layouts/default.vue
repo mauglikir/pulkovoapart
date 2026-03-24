@@ -35,10 +35,10 @@ export default {
         <div class="wrapper__menu" v-if="!open">
             <div class="wrapper__menu__list">
                <ul>
-                <li><NuxtLink click="open=!open" to="/">{{$t('home')}}</NuxtLink></li>
-                <li><NuxtLink click="open=!open" to="/about">{{$t('apartment')}}</NuxtLink></li>
-                <li><NuxtLink click="open=!open" to="/about">{{$t('bookingconditions')}}</NuxtLink></li>
-                <li><NuxtLink click="open=!open" to="/about">{{$t('contact')}}</NuxtLink></li>
+                <li><NuxtLink @click="open=!open" :to="$localePath('index')">{{$t('home')}}</NuxtLink></li>
+                <li><NuxtLink @click="open=!open" :to="$localePath('about')">{{$t('apartment')}}</NuxtLink></li>
+                <li><NuxtLink @click="open=!open" to="/about">{{$t('bookingconditions')}}</NuxtLink></li>
+                <li><NuxtLink @click="open=!open" to="/about">{{$t('contact')}}</NuxtLink></li>
                </ul>
                <div class="btn__group">
                     <button v-for="locale in locales" :key="locale" @click="setLocale(locale.code)">
