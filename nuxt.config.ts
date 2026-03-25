@@ -2,8 +2,10 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n', 'v-gsap-nuxt'],
- 
+  modules: ['@nuxtjs/i18n', 'v-gsap-nuxt','vue-yandex-maps/nuxt'],
+  yandexMaps: {
+    apikey: '3db4601a-e7d5-4199-a400-255ae286b96e',
+  },
   vite:{
      server: {
          allowedHosts: ['kfspb.ru','www.kfspb.ru']

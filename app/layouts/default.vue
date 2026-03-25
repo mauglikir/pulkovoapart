@@ -41,7 +41,7 @@ export default {
                 <li><NuxtLink @click="open=!open" to="/about">{{$t('contact')}}</NuxtLink></li>
                </ul>
                <div class="btn__group">
-                    <button v-for="locale in locales" :key="locale" @click="setLocale(locale.code)">
+                    <button v-for="locale in locales" :key="locale" @click="setLocale(locale.code),open=!open ">
                         <img :src="`/img/flag/${locale.icon}` " alt="">
                         {{ locale.code }}
                     </button>
@@ -140,5 +140,16 @@ nav img{
     color: var(--color-white);
     text-transform: uppercase;
     font-size: 1.2rem;
+}
+.btn__group{
+    margin-top: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 21px;
+    justify-content: center;
+    align-items: center;
+}
+.btn__group button img{
+    width: 30px;
 }
 </style>

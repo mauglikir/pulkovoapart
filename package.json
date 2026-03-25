@@ -16,6 +16,7 @@
     "v-gsap-nuxt": "^1.5.12",
     "vue": "^3.5.29",
     "vue-dadata": "^3.0.2",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "vue-yandex-maps": "^3.0.2"
   }
 }

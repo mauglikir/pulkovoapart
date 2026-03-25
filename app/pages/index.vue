@@ -4,18 +4,82 @@ import gsap from 'gsap'
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all'
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 const locales = useI18n()
-const TestAnime = () =>{
-    
+const titlAnime = ()=> {
+    gsap.fromTo(".anim__title", {
+            scrollTrigger:{
+                trigger:'.start__anime',
+                toggleActions: "restart none none none",
+            },
+            y:-20, 
+            opacity:0,
+             duration:2       
+        },    
+        {
+            scrollTrigger:{
+                trigger:'.start__anime',
+                toggleActions: "restart none none none",
+            },
+            y:0,
+            opacity:1,
+            duration:2
+        },
+            
+        
+        ),
+        gsap.fromTo(".text__anime_left", {
+            scrollTrigger:{
+                trigger:'.start__anime',
+                toggleActions: "restart none none none",
+            },
+            x:-20, 
+            opacity:0,
+             duration:3       
+        },    
+        {
+            scrollTrigger:{
+                trigger:'.start__anime',
+                toggleActions: "restart none none none",
+            },
+            x:0,
+            opacity:1,
+            duration:3
+        },
+            
+        
+        ),
+        gsap.fromTo(".text__anime_right", {
+            scrollTrigger:{
+                trigger:'.start__anime',
+                toggleActions: "restart none none none",
+            },
+            x:20, 
+            opacity:0,
+             duration:3       
+        },    
+        {
+            scrollTrigger:{
+                trigger:'.start__anime',
+                toggleActions: "restart none none none",
+            },
+            x:0,
+            opacity:1,
+            duration:3
+        },
+            
+        
+        )
+
+}
+const TestAnime = () =>{    
      gsap.to(".test", {
         scrollTrigger:{
             trigger:'.test',
             toggleActions: "restart none none none"
         },
         x:200,
-        duration:4
-        
+        duration:4        
     })
-
+     
 }
 
 const AnimeTitle = () =>{
@@ -68,6 +132,7 @@ onMounted(() =>{
     console.log('Jello')
     AnimeTitle()
     TestAnime()
+    titlAnime()
 })
 </script>
 <template>
@@ -79,8 +144,9 @@ onMounted(() =>{
     </section>
 
     <section id="we">
-        <h2>{{ $t('we')}}</h2>
-        <p></p>
+        <h2 class="anim__title">{{ $t('we')}}</h2>
+        <p class="start__anime text__anime_left">{{ $t('wetext') }}</p>
+        <p class="text__anime_right">{{ $t('wetextnext') }}</p>
     </section>
     <section id="map">
         <div class="test"></div>
