@@ -12,7 +12,7 @@ const titlAnime = ()=> {
             },
             y:-20, 
             opacity:0,
-             duration:2       
+             duration:1       
         },    
         {
             scrollTrigger:{
@@ -21,7 +21,7 @@ const titlAnime = ()=> {
             },
             y:0,
             opacity:1,
-            duration:2
+            duration:1
         },
             
         
@@ -33,7 +33,7 @@ const titlAnime = ()=> {
             },
             x:-20, 
             opacity:0,
-             duration:3       
+             duration:1       
         },    
         {
             scrollTrigger:{
@@ -42,7 +42,7 @@ const titlAnime = ()=> {
             },
             x:0,
             opacity:1,
-            duration:3
+            duration:1
         },
             
         
@@ -54,7 +54,7 @@ const titlAnime = ()=> {
             },
             x:20, 
             opacity:0,
-             duration:3       
+             duration:1       
         },    
         {
             scrollTrigger:{
@@ -63,7 +63,7 @@ const titlAnime = ()=> {
             },
             x:0,
             opacity:1,
-            duration:3
+            duration:1
         },
             
         
@@ -71,13 +71,13 @@ const titlAnime = ()=> {
 
 }
 const TestAnime = () =>{    
-     gsap.to(".test", {
+     gsap.to(".d11", {
         scrollTrigger:{
-            trigger:'.test',
+            trigger:'.d11',
             toggleActions: "restart none none none"
         },
-        x:200,
-        duration:4        
+        x:'50%',
+        duration:1        
     })
      
 }
@@ -149,7 +149,9 @@ onMounted(() =>{
         <p class="text__anime_right">{{ $t('wetextnext') }}</p>
     </section>
     <section id="map">
-        <div class="test"></div>
+        
+        <div class="d11">
+        </div>
     </section>
     
 
@@ -167,9 +169,23 @@ export default{
 
 </script>
 <style>
-.test{
-    width: 20px;
-    height: 20px;
-    background-color:red;
+
+.d11 {
+    width: 170px;
+    border-top: 60px solid #191919;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.d11::before
+ {
+    content: 'MAP';
+    position: absolute;
+    color: var(--color-orange);
+    bottom: 7px;
+    font-size: 2.5rem;
 }
 </style>
