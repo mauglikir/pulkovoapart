@@ -31,7 +31,7 @@ export default defineNuxtConfig({
         {
           src:'//widget.reservationsteps.ru/js/bnovo.js',
           async:'false'
-        }
+        },
       ]
     }
   }
