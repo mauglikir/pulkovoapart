@@ -167,7 +167,7 @@ onMounted(() =>{
         <div id="map-img"></div>
         <div class="btngroup">
             <div class="btn__nav">
-                <a href="yandexnavi://build_route_on_map?lat_from=55.74&lon_from=37.60&lat_to=55.76&lon_to=37.64"> Navigator</a>
+                <a href="yandexnavi://build_route_on_map?lat_to=55.76&lon_to=37.64"> Navigator</a>
                  <a href="https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lon}&origin=${location.lat},${location.lon}&travelmode=driving">Map</a>
             </div>
         </div>
