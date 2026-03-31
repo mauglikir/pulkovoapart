@@ -83,26 +83,7 @@ const TestAnime = () =>{
      
 }
 
-// const MapAnime = () =>{
-//     const map = gsap.timeline({
-//         scrollTrigger:{
-//         scrub:1,
-//         pin:true,
-//         trigger:"#we",
-//         start:"50% 50%",
-//         endTrigger:'#endmap',
-//         end:'bottom 50%',
-//         }
-//     });
 
-//     map.fromTo(".img-galler-1",
-//     {
-//         x:-400
-//     },{
-//         x:400
-//     }
-//     )
-// }
 const AnimeTitle = () =>{
     const tl =gsap.timeline();
    
@@ -148,73 +129,12 @@ const AnimeTitle = () =>{
 
 
 }
-const TTert = () => {
-    const mapa = gsap.utils.toArray (".img-galler-1")
-    let gopa = window.innerWidth
-    console.log(gopa.scrollWidth)
-    gsap.to('#photos-strip',{
-        scrollTrigger:{
-            scrub:true,
-            trigger:'#photos-strip',
-            start: "center center",
-            end: () => gopa,
-            invalidateOnRefresh: true
-        },
-        x:400
 
-    })
-    console.log(mapa + gopa)
-    
-}
-const bNova = () => {
-   Bnovo_Widget.init(function(){
-       Bnovo_Widget.open('_bn_widget_', {
-        type: "vertical",
-        uid: "5baaaf5a-57be-4f62-99e8-8b9354503792",
-        lang: "ru",
-        width: "300",
-        width_mobile: "300",
-        background: "#ffffff",
-        background_mobile: "#ffffff",
-        bg_alpha: "100",
-        bg_alpha_mobile: "100",
-        border_color_mobile: "#C6CAD3",
-        padding: "24",
-        padding_mobile: "24",
-        border_radius: "8",
-        button_font_size: "14",
-        button_height: "42",
-        font_type: "inter",
-        title_color: "#242742",
-        title_color_mobile: "#242742",
-        title_size: "22",
-        title_size_mobile: "22",
-        inp_color: "#242742",
-        inp_bordhover: "#dedfe3",
-        inp_bordcolor: "#BCBCBC",
-        inp_alpha: "100",
-        btn_background: "#1875F0",
-        btn_background_over: "#1850D2",
-        btn_textcolor: "#FFFFFF",
-        btn_textover: "#FFFFFF",
-        btn_bordcolor: "#1875F0",
-        btn_bordhover: "#1850D2",
-        min_age: "0",
-        max_age: "17",
-        adults_default: "1",
-        cancel_color: "#FFFFFF",
-        switch_mobiles_width: "800",
-    });
-   });
-   console.log(bNova.init)
-}
+
 onMounted(() =>{
-    bNova()
-    TTert()
     AnimeTitle()
     TestAnime()
     titlAnime()
-    // MapAnime()
 })
 </script>
 <template>
@@ -229,7 +149,7 @@ onMounted(() =>{
         <h2 class="anim__title">{{ $t('we')}}</h2>
         <p class="start__anime text__anime_left">{{ $t('wetext') }}</p>
         <p class="text__anime_right">{{ $t('wetextnext') }}</p>
-        <div id="photos">
+        <!-- <div id="photos">
             <div id="photos_wrap">
                 <div id="photos-strip">
                     <img class="img-galler-1" src="/img/moscow.jpg" alt="">
@@ -238,7 +158,7 @@ onMounted(() =>{
                 </div>
             </div>
             
-        </div>
+        </div> -->
     </section>
     <section id="map">
         
@@ -249,7 +169,6 @@ onMounted(() =>{
 
         </div>
         <div class="left" id="_bn_widget_">
-            <p>sdvsdv</p>
         </div>
     </section>
     
@@ -268,7 +187,11 @@ export default{
 
 </script>
 <style>
-
+#photos-strip{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
 .d11 {
     width: 170px;
     border-top: 60px solid #191919;

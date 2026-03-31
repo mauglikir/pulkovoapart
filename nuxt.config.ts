@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', 'v-gsap-nuxt','vue-yandex-maps/nuxt'],
   yandexMaps: {
-    apikey: '3db4601a-e7d5-4199-a400-255ae286b96e',
+    apikey: '45b17647-1fd8-47b1-96bf-7cc7b07d6e50',
   },
   vite:{
      server: {
