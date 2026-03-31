@@ -165,10 +165,14 @@ onMounted(() =>{
         <div class="d11">
         </div>
         <div id="map-img"></div>
+        <div class="btngroup">
+            <div class="btn__nav">
+                <a href="yandexnavi://build_route_on_map?lat_from=55.74&lon_from=37.60&lat_to=55.76&lon_to=37.64"> Navigator</a>
+                 <a href="https://www.google.com/maps/dir/?api=1&destination=${coords.lat},${coords.lon}&origin=${location.lat},${location.lon}&travelmode=driving">Map</a>
+            </div>
+        </div>
         <div id="endmap">
 
-        </div>
-        <div class="left" id="_bn_widget_">
         </div>
     </section>
     
@@ -187,6 +191,21 @@ export default{
 
 </script>
 <style>
+.btn__nav{
+    display: flex;
+    justify-content: space-between;
+}
+.btngroup{
+    border: 1px solid #666;
+    margin: 0 21px;
+    
+}
+#map-img{
+    width: 80%;
+    height: 70vh;
+    background-color: black;
+    margin: 0 auto;
+}
 #photos-strip{
     display: flex;
     flex-direction: row;
