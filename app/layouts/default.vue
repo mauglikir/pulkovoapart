@@ -37,7 +37,7 @@ export default {
                <ul>
                 <li><NuxtLink @click="open=!open" :to="$localePath('index')">{{$t('home')}}</NuxtLink></li>
                 <li><NuxtLink @click="open=!open" :to="$localePath('about')">{{$t('apartment')}}</NuxtLink></li>
-                <li><NuxtLink @click="open=!open" to="/about">{{$t('bookingconditions')}}</NuxtLink></li>
+                <li><NuxtLink @click="open=!open" :to="$localePath('eatpage')">{{$t('bookingconditions')}}</NuxtLink></li>
                 <li><NuxtLink @click="open=!open" to="/about">{{$t('contact')}}</NuxtLink></li>
                </ul>
                <div class="btn__group">

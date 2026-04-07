@@ -1,9 +1,19 @@
 <script setup>
 import { onMounted } from 'vue'
 import gsap from 'gsap'
-import { ScrollTrigger, ScrollToPlugin } from 'gsap/all'
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+import { ScrollTrigger, ScrollToPlugin, ScrollSmoother } from 'gsap/all'
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin,ScrollSmoother)
+
 const locales = useI18n()
+const smoothPage = () => ScrollSmoother.create({
+    wrapper: ".wrap__smoo",
+  content: ".content__smoo",
+  smooth: 2,
+  effects: true,
+  normalizeScroll: true,
+  ignoreMobileResize: true,
+  preventDefault: true
+})
   
 const titlAnime = ()=> {
     gsap.fromTo(".anim__title", {
@@ -77,7 +87,7 @@ const TestAnime = () =>{
             trigger:'.d11',
             toggleActions: "restart none none none"
         },
-        x:'50%',
+        x:'20%',
         duration:1        
     })
      
@@ -135,10 +145,14 @@ onMounted(() =>{
     AnimeTitle()
     TestAnime()
     titlAnime()
+    smoothPage()
 })
 </script>
 <template>
-    
+    <div class="wrap__smoo">
+        <div class="content__smoo">
+
+       
     <section id="banner">
         <h1 style="opacity:0" class="main_title" >{{ $t('maintitle') }}</h1>
         <p style="opacity:0" class="title">{{ $t('title') }}</p>
@@ -163,20 +177,40 @@ onMounted(() =>{
     <section id="map">
         
         <div class="d11">
+            <h2>{{ $t('maptittle') }}</h2>
         </div>
-        <div id="map-img"></div>
-        <div class="btngroup">
-            <div class="btn__nav">
-                <a href="yandexnavi://build_route_on_map?lat_to=30.328784&lon_to=59.831516"> Navigator</a>
-                 <a href="google.navigation:q=59.831516, 30.328705&amp;mode=d">Map</a>
-            </div>
+        <div id="map-img">
+             <Map></Map>
+            <div class="btngroup">
+                <div class="btn__nav">
+                    <a  class="btn__nav_item" href="yandexnavi://build_route_on_map?lat_to=30.328784&lon_to=59.831516"> 
+                        <img  width="32" src="/img/yandex-maps-logo.svg" alt="" srcset="">
+                        Яндекс навигатор
+                    </a>
+                    <a class="btn__nav_item" href="google.navigation:q=59.831516, 30.328705&amp;mode=d">
+                        <img  width="32" src="/img/icons8-google-maps.svg" alt="" srcset="">
+                        Goole карты
+                    </a>
+                </div>
         </div>
+        <p  v-gsap.whenVisible.from="{
+    opacity: 0,
+    start: 'top 50%',
+    end: 'bottom 50%',
+  }">
+            {{ $t('mapp') }}
+        </p>
+        </div>
+        
         <div id="endmap">
-
+           
         </div>
     </section>
-    
-
+    <section id="eat">
+<h2 v-gsap.whenVisible.animateText.once.slow>fewrferv fgerf</h2>
+    </section>
+     </div>
+</div>
 </template>
 
 <script>
@@ -191,44 +225,48 @@ export default{
 
 </script>
 <style>
+#eat{
+    background-color: bisque;
+}
+.btn__nav_item{
+    display: flex;
+    flex-direction: row;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    border-radius: 7px;
+    color: black;
+    box-shadow: 1px 2px 5px #c57d0b;
+}
 .btn__nav{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 .btngroup{
-    border: 1px solid #666;
-    margin: 0 21px;
+    width: 100%;
     
 }
+#map{
+    padding: 21px;
+}
 #map-img{
-    width: 80%;
-    height: 70vh;
-    background-color: black;
+    padding: 21px 0 ;
+    height: 80%;
     margin: 0 auto;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
 }
 #photos-strip{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
 }
-.d11 {
-    width: 170px;
-    border-top: 60px solid #191919;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.d11::before
- {
-    content: 'MAP';
-    position: absolute;
-    color: var(--color-orange);
-    bottom: 7px;
-    font-size: 2.5rem;
-}
+
 .img-galler-1{
     padding: 7px;
     box-shadow: 1px 1px 6px 1px #c7c0c08c;
