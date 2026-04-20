@@ -146,6 +146,7 @@ h2{
     color: var(--color-white);
     display: flex;
     align-items: center;
+    min-width:48%;
 }
 
 

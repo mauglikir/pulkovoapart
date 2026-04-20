@@ -238,6 +238,7 @@ export default{
     border-radius: 7px;
     color: black;
     box-shadow: 1px 2px 5px #c57d0b;
+    min-width: 48%;
 }
 .btn__nav{
     display: flex;
