@@ -163,7 +163,7 @@ onMounted(() =>{
         <h2 class="anim__title">{{ $t('we')}}</h2>
         <p class="start__anime text__anime_left">{{ $t('wetext') }}</p>
         <p class="text__anime_right">{{ $t('wetextnext') }}</p>
-        <!-- <div id="photos">
+        <div id="photos">
             <div id="photos_wrap">
                 <div id="photos-strip">
                     <img class="img-galler-1" src="/img/moscow.jpg" alt="">
@@ -172,7 +172,7 @@ onMounted(() =>{
                 </div>
             </div>
             
-        </div> -->
+        </div>
     </section>
     <section id="map">
         

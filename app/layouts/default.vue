@@ -53,6 +53,10 @@ export default {
        
     </nav>
 <slot></slot>
+
+    <Footer></Footer>
+
+
 </template>
 <style>
 :root{
